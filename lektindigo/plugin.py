@@ -1,6 +1,6 @@
 import pkg_resources
 
-from tutor import hooks
+from lekt import hooks
 
 from .__about__ import __version__
 

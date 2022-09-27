@@ -14,7 +14,7 @@ config = {
         "PRIMARY_COLOR": "#3b85ff",  # cool blue
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
-        # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[] --set INDIGO_FOOTER_LEGAL_LINKS=[]
+        # lekt config save --set INDIGO_FOOTER_NAV_LINKS=[] --set INDIGO_FOOTER_LEGAL_LINKS=[]
         "FOOTER_NAV_LINKS": [
             {"title": "About", "url": "/about"},
             {"title": "Contact", "url": "/contact"},
@@ -23,7 +23,7 @@ config = {
             {"title": "Terms of service", "url": "/tos"},
             {
                 "title": "Indigo theme for Open edX",
-                "url": "https://github.com/overhangio/tutor-indigo",
+                "url": "https://github.com/lektorium-tutor/lekt-indigo",
             },
         ],
     },

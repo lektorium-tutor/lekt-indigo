@@ -17,21 +17,21 @@ Indigo was specially developed to be used with `Tutor <https://docs.overhang.io>
 
 Since Tutor v13.2.0, Indigo can be installed as a Tutor plugin::
 
-    pip install tutor-indigo
-    tutor plugins enable indigo
-    tutor config save
+    pip install git+https://github.com/lektorium-tutor/lekt-indigo.git
+    lekt plugins enable indigo
+    lekt config save
 
 Rebuild the Openedx docker image::
 
-    tutor images build openedx
+    lekt images build openedx
 
 Restart your platform::
 
-    tutor local start -d
+    lekt local start -d
 
-You will then have to enable the "indigo" theme, as per the `Tutor documentation <https://docs.tutor.overhang.io/local.html#setting-a-new-theme>`__::
+You will then have to enable the "indigo" theme, as per the `Tutor documentation <https://docs.lekt.overhang.io/local.html#setting-a-new-theme>`__::
 
-    tutor local settheme indigo
+    lekt local settheme indigo
 
 Configuration
 -------------
@@ -39,11 +39,11 @@ Configuration
 - ``INDIGO_WELCOME_MESSAGE`` (default: "The place for all your online learning")
 - ``INDIGO_PRIMARY_COLOR`` (default: "#3b85ff")
 - ``INDIGO_FOOTER_NAV_LINKS`` (default: ``[{"title": "About", "url": "/about"}, {"title": "Contact", "url": "/contact"}]``)
-- ``INDIGO_FOOTER_LEGAL_LINKS`` (default: ``[{"title": "Terms of service", "url": "/tos"}, {"title": "Indigo theme for Open edX", "url": "https://github.com/overhangio/tutor-indigo"}]``)
+- ``INDIGO_FOOTER_LEGAL_LINKS`` (default: ``[{"title": "Terms of service", "url": "/tos"}, {"title": "Indigo theme for Open edX", "url": "https://github.com/overhangio/lekt-indigo"}]``)
 
-The ``INDIGO_*`` settings listed above may be modified by running ``tutor config save --set INDIGO_...=...``. For instance, to remove all links from the footer, run::
+The ``INDIGO_*`` settings listed above may be modified by running ``lekt config save --set INDIGO_...=...``. For instance, to remove all links from the footer, run::
 
-    tutor config save --set "INDIGO_FOOTER_NAV_LINKS=[]" --set "INDIGO_FOOTER_LEGAL_LINKS=[]"
+    lekt config save --set "INDIGO_FOOTER_NAV_LINKS=[]" --set "INDIGO_FOOTER_LEGAL_LINKS=[]"
 
 Customization
 -------------
@@ -53,7 +53,7 @@ This plugin can serve as a starting point to create your own themes. Just fork t
 Changing the default logo and other images
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The theme images are stored in `tutorindigo/templates/indigo/lms/static/images <https://github.com/overhangio/tutor-indigo/tree/master/tutorindigo/templates/indigo/lms/static/images>`__ for the LMS, and in `tutorindigo/templates/indigo/cms/static/images <https://github.com/overhangio/tutor-indigo/tree/master/tutorindigo/templates/indigo/cms/static/images>`__ for the CMS. To use custom images in your theme, just replace the files stored in these folders with your own.
+The theme images are stored in `lektindigo/templates/indigo/lms/static/images <https://github.com/overhangio/lekt-indigo/tree/master/lektindigo/templates/indigo/lms/static/images>`__ for the LMS, and in `lektindigo/templates/indigo/cms/static/images <https://github.com/overhangio/lekt-indigo/tree/master/lektindigo/templates/indigo/cms/static/images>`__ for the CMS. To use custom images in your theme, just replace the files stored in these folders with your own.
 
 Overriding the default "about", "contact", etc. static pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,7 +62,7 @@ By default, the ``/about`` and ``/contact`` pages contain a simple line of text:
 
 The static templates used by Open edX to render those pages are all stored in the `edx-platform/lms/templates/static_templates <https://github.com/edx/edx-platform/tree/open-release/maple.master/lms/templates/static_templates>`__ folder. To override those templates, you should add your own in the following folder::
 
-    ls tutorindigo/templates/indigo/lms/templates/static_templates"
+    ls lektindigo/templates/indigo/lms/templates/static_templates"
 
 For instance, edit the "donate.html" file in this directory. We can derive the content of this file from the contents of the `donate.html <https://github.com/edx/edx-platform/blob/open-release/maple.master/lms/templates/static_templates/donate.html>`__ static template in edx-platform::
 
@@ -88,11 +88,11 @@ This new template will then be used to render the /donate url.
 Troubleshooting
 ---------------
 
-Please refer to the troubleshooting section of the Tutor documentation: https://docs.tutor.overhang.io/troubleshooting.html
+Please refer to the troubleshooting section of the Tutor documentation: https://docs.lekt.overhang.io/troubleshooting.html
 
 In particular, *do not* open a GitHub issue to ask about your issues. Instead, go to the Tutor forum: https://discuss.overhang.io/
 
 License
 -------
 
-This work is licensed under the terms of the `GNU Affero General Public License (AGPL) <https://github.com/overhangio/tutor-indigo/blob/master/LICENSE.txt>`_.
+This work is licensed under the terms of the `GNU Affero General Public License (AGPL) <https://github.com/overhangio/lekt-indigo/blob/master/LICENSE.txt>`_.
